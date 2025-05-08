@@ -1,0 +1,6 @@
+@ContextAI_HostAddress = http://localhost:5076
+
+GET {{ContextAI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

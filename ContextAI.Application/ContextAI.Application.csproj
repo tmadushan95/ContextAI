@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\IRepositories\" />
+    <Folder Include="Interfaces\IServices\" />
+    <Folder Include="UseCases\Repositories\" />
+    <Folder Include="UseCases\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ContextAI.Domain\ContextAI.Domain.csproj" />
+    <ProjectReference Include="..\ContextAI.Infrastructure\ContextAI.Infrastructure.csproj" />
+    <ProjectReference Include="..\ContextAI.MCPServer\ContextAI.MCPServer.csproj" />
+  </ItemGroup>
+
+</Project>
