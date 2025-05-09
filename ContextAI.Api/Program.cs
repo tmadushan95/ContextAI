@@ -1,4 +1,5 @@
 using ContextAI.MCP;
+using ContextAI.MCP.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +14,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
-#region MCP client Configuration
-//await McpClient.CreateMcpClientAsync();
-#endregion
+// run MCP  client
+McpClient mcpClient = app.Services.GetRequiredService<McpClient>();
+await mcpClient.CreateMcpClientAsync();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

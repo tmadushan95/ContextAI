@@ -15,6 +15,10 @@ namespace ContextAI.MCP
                     .WithToolsFromAssembly();
                 #endregion
 
+                #region MCP client Configuration
+                services.AddSingleton<McpClient>();
+                #endregion
+
                 return services;
             }
             catch (Exception ex)
