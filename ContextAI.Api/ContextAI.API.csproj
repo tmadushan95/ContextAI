@@ -13,7 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ContextAI.Application\ContextAI.Application.csproj" />
     <ProjectReference Include="..\ContextAI.Infrastructure\ContextAI.Infrastructure.csproj" />
-    <ProjectReference Include="..\ContextAI.MCPServer\ContextAI.MCPServer.csproj" />
+    <ProjectReference Include="..\ContextAI.MCP\ContextAI.MCP.csproj" />
+    <ProjectReference Include="..\ContextAI.MCP\ContextAI.MCP.csproj" />
   </ItemGroup>
 
   <ItemGroup>

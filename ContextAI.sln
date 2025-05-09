@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.API", "ContextAI\ContextAI.API.csproj", "{93D6D45D-8661-4353-9C3A-441D2D5AE70C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.Application", "ContextAI.Application\ContextAI.Application.csproj", "{6A31E47D-4492-4D78-8DFB-607A9C9193C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.Domain", "ContextAI.Domain\ContextAI.Domain.csproj", "{42AE43F9-5496-4C56-915D-9BC437A03DCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.Infrastructure", "ContextAI.Infrastructure\ContextAI.Infrastructure.csproj", "{03DC5CB4-D853-4E6B-885B-64FE21A82CE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.MCPServer", "ContextAI.MCPServer\ContextAI.MCPServer.csproj", "{6A01810B-21B4-4158-8B20-94816BE4C429}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.API", "ContextAI.Api\ContextAI.API.csproj", "{FDDFC669-02DE-CEB0-2632-1D9B5385CF41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextAI.MCP", "ContextAI.MCP\ContextAI.MCP.csproj", "{E5204253-57B5-7E3C-3FC8-40BB711C2C60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{93D6D45D-8661-4353-9C3A-441D2D5AE70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93D6D45D-8661-4353-9C3A-441D2D5AE70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93D6D45D-8661-4353-9C3A-441D2D5AE70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93D6D45D-8661-4353-9C3A-441D2D5AE70C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A31E47D-4492-4D78-8DFB-607A9C9193C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A31E47D-4492-4D78-8DFB-607A9C9193C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A31E47D-4492-4D78-8DFB-607A9C9193C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +31,14 @@ Global
 		{03DC5CB4-D853-4E6B-885B-64FE21A82CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03DC5CB4-D853-4E6B-885B-64FE21A82CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03DC5CB4-D853-4E6B-885B-64FE21A82CE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A01810B-21B4-4158-8B20-94816BE4C429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A01810B-21B4-4158-8B20-94816BE4C429}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A01810B-21B4-4158-8B20-94816BE4C429}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A01810B-21B4-4158-8B20-94816BE4C429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDDFC669-02DE-CEB0-2632-1D9B5385CF41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDDFC669-02DE-CEB0-2632-1D9B5385CF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDDFC669-02DE-CEB0-2632-1D9B5385CF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDDFC669-02DE-CEB0-2632-1D9B5385CF41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5204253-57B5-7E3C-3FC8-40BB711C2C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5204253-57B5-7E3C-3FC8-40BB711C2C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5204253-57B5-7E3C-3FC8-40BB711C2C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5204253-57B5-7E3C-3FC8-40BB711C2C60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

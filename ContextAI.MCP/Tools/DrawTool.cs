@@ -1,15 +1,18 @@
-﻿using McpDotNet.Server;
+﻿using Microsoft.AspNetCore.SignalR;
+using ModelContextProtocol.Server;
 using System.ComponentModel;
 
-namespace ContextAI.MCPServer.Tools
+namespace ContextAI.MCP.Tools
 {
-    [McpToolType]
+    [McpServerToolType]
     public static class DrawTool
     {
-        [McpTool, Description("Draws a line on a whiteboard.")]
+        [McpServerTool, Description("Draws a line on a whiteboard.")]
         public static async Task DrawLine()
         {
             Console.WriteLine("Drawing a line on the whiteboard...");
         }
     }
+
+
 }

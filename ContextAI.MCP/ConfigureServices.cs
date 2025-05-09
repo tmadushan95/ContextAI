@@ -1,7 +1,7 @@
-﻿using McpDotNet;
+﻿using ContextAI.MCP.Client;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ContextAI.MCPServer
+namespace ContextAI.MCP
 {
     public static class ConfigureServices
     {
