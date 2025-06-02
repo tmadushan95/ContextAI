@@ -10,6 +10,8 @@ namespace ContextAI.MCP.Server
             try
             {
                 #region MCP server Configuration
+                // Register and configure the MCP server with standard input/output transport
+                // and auto-discovery of tools from the current assembly.
                 services.AddMcpServer()
                     .WithStdioServerTransport()
                     .WithToolsFromAssembly();
