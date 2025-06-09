@@ -1,13 +1,16 @@
 ﻿using ModelContextProtocol.Server;
-using System;
 using System.ComponentModel;
-using System.Threading.Tasks;
 
 namespace ContextAI.MCP.Server.Tools
 {
+
+    /// <summary>
+    /// Represents a tool for drawing on a whiteboard.
+    /// </summary>
     [McpServerToolType]
     public static class DrawTool
     {
+        // [McpServerTool] attribute is used to mark methods as tools that can be called by the MCP client.
         [McpServerTool, Description("Draws a line on a whiteboard.")]
         public static async Task DrawLine()
         {

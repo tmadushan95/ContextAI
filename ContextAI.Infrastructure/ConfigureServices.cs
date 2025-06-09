@@ -4,20 +4,10 @@ namespace ContextAI.Infrastructure
 {
     public static class ConfigureServices
     {
-        public static IServiceCollection AddMCPServices(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
             try
             {
-                #region MCP server Configuration
-                services.AddMcpServer()
-                    .WithStdioServerTransport()
-                    .WithToolsFromAssembly();
-                #endregion
-
-                #region MCP client Configuration
-                //services.AddSingleton<McpClient>();
-                #endregion
-
                 return services;
             }
             catch (Exception ex)

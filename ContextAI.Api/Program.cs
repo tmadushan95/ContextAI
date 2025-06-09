@@ -9,9 +9,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register Model Context Protocol (MCP) services
-builder.Services.AddMCPServices();
-
 var app = builder.Build();
 
 // Configure middleware for development environment

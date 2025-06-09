@@ -1,24 +1,25 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace ContextAI.MCP.Server
 {
+    /// <summary>
+    /// Provides extension methods to configure services for the Model Context Protocol (MCP) server.
+    /// </summary>
     public static class ConfigureServices
     {
+        /// <summary>
+        /// Registers the necessary services for the MCP server in the provided service collection.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddMCPServices(this IServiceCollection services)
         {
             try
             {
                 #region MCP server Configuration
-                // Register and configure the MCP server with standard input/output transport
-                // and auto-discovery of tools from the current assembly.
                 services.AddMcpServer()
                     .WithStdioServerTransport()
                     .WithToolsFromAssembly();
-                #endregion
-
-                #region MCP client Configuration
-                //services.AddSingleton<McpClient>();
                 #endregion
 
                 return services;
