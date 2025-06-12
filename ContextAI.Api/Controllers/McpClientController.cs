@@ -13,7 +13,7 @@ namespace ContextAI.API.Controllers
         [HttpGet("index")]
         public Task<List<string>> GetActionResult(string userInput)
         {
-            return _clientService.StartMcpClientAsync(userInput);
+            return _clientService.GenerateAssistantResponseAsync(userInput);
         }
     }
 }
