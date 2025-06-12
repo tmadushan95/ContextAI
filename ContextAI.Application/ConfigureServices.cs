@@ -1,5 +1,6 @@
 ﻿using ContextAI.Application.Interfaces.IServices;
 using ContextAI.Application.UseCases.Services;
+using ContextAI.Domain.Helpers;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,10 +22,10 @@ namespace ContextAI.Application
             try
             {
                 #region Service Configuration
-                // Retrieve the path to the MCP (Modular Conversational Platform) server executable from configuration.
-                string serverPath = configuration.GetSection("McpConfiguration")
-                                        .GetSection("McpServerConfig")
-                                        .GetValue<string>("McpServerPath")!;
+                // Retrieve configuration settings for mcp server
+                var _mcpServerConfig = configuration.GetSection("McpConfiguration")
+                                            .GetSection("McpServerConfig")
+                                            .Get<McpServerConfiguration>()!; ;
 
                 // Register IMcpClient as a scoped service in the dependency injection container.
                 // The client communicates with the MCP server over standard input/output (Stdio).
@@ -34,35 +35,31 @@ namespace ContextAI.Application
                     var clientTransport = new StdioClientTransport(new()
                     {
                         Name = "ContextAI Server",
-                        Command = serverPath,
+                        Command = _mcpServerConfig.McpServerPath,
                     });
 
                     // Create and return the MCP client instance using the configured transport.
                     return McpClientFactory.CreateAsync(clientTransport).GetAwaiter().GetResult();
                 });
 
-                // Retrieve configuration settings for the Ollama-based chat client (LLM integration).d
-                string ollamaEndpoint = configuration.GetSection("McpConfiguration")
-                                                .GetSection("McpClientConfig")
-                                                .GetValue<string>("OllamaEndpoint")!;
-
-                string ollamaModelName = configuration.GetSection("McpConfiguration")
-                                                .GetSection("McpClientConfig")
-                                                .GetValue<string>("OllamaModelName")!;
+                // Retrieve configuration settings for mcp client
+                var _mcplientConfig = configuration.GetSection("McpConfiguration")
+                                             .GetSection("McpClientConfig")
+                                             .Get<McpClientConfiguration>()!;
 
                 // Register IChatClient as a scoped service, configured to use Ollama and enable function calling.
                 services.AddScoped<IChatClient>(provider =>
                 {
                     // Instantiate a chat client using Ollama's endpoint and model.
                     var ollamaChatClient = new OllamaChatClient(
-                           new Uri(ollamaEndpoint),     // Local or remote Ollama server URL.
-                           ollamaModelName              // Name of the model to be used (e.g., llama3, codellama).
+                           new Uri(_mcplientConfig.OllamaEndpoint),     // Local or remote Ollama server URL.
+                           _mcplientConfig.OllamaModelName              // Name of the model to be used (e.g., llama3, codellama).
                     );
 
                     // Use a builder pattern to enable function invocation and return the constructed chat client.
                     return new ChatClientBuilder(ollamaChatClient)
-                            .UseFunctionInvocation()
-                            .Build();
+                                    .UseFunctionInvocation()
+                                    .Build();
                 });
 
                 // Registers the IMcpClientService interface and its implementation McpClientService
