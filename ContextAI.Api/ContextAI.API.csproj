@@ -15,8 +15,4 @@
     <ProjectReference Include="..\ContextAI.Infrastructure\ContextAI.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

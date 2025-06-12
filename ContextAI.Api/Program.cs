@@ -1,9 +1,12 @@
-using ContextAI.Infrastructure;
+using ContextAI.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Register MVC controllers for HTTP API support
 builder.Services.AddControllers();
+
+//  ContextAI Application Services
+builder.Services.AddContextAIApplicationServices();
 
 // Register Swagger/OpenAPI for API documentation
 builder.Services.AddEndpointsApiExplorer();
