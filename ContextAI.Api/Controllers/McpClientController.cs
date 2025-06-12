@@ -1,6 +1,5 @@
 ﻿using ContextAI.Application.Interfaces.IServices;
 using Microsoft.AspNetCore.Mvc;
-using ModelContextProtocol.Client;
 
 namespace ContextAI.API.Controllers
 {

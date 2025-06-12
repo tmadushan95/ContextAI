@@ -12,9 +12,9 @@ namespace ContextAI.MCP.Server.Tools
     {
         // [McpServerTool] attribute is used to mark methods as tools that can be called by the MCP client.
         [McpServerTool, Description("Draws a line on a whiteboard.")]
-        public static async Task DrawLine()
+        public static string DrawLine()
         {
-            Console.WriteLine("Drawing a line on the whiteboard...");
+            return "Drawing a line on the whiteboard...";
         }
     }
 
