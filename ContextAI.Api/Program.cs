@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 //  ContextAI Application Services
-builder.Services.AddContextAIApplicationServices();
+builder.Services.AddContextAIApplicationServices(builder.Configuration);
 
 // Register Swagger/OpenAPI for API documentation
 builder.Services.AddEndpointsApiExplorer();
