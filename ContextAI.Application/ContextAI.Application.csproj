@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ContextAI.Domain\ContextAI.Domain.csproj" />
-    <ProjectReference Include="..\ContextAI.Infrastructure\ContextAI.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
